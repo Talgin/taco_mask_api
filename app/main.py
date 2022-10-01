@@ -1,17 +1,13 @@
 from typing import Union, Optional, List
-from fastapi import FastAPI
+from fastapi import FastAPI, Security
 from fastapi import FastAPI, File, UploadFile, Form, Response, status, BackgroundTasks
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
-from pandas import DataFrame as df
-from sklearn import preprocessing
+import security
 
 import pickle
 
-from fastapi import APIRouter, Depends
-from models import Result, User
-from app.security import check_authentication_header
 
 app = FastAPI()
 
@@ -21,7 +17,7 @@ def read_root():
     return {"Hello": "World"}
 
 
-@app.get("/authorization/", dependencies=[Security(get_api_key)])
+@app.get("/authorization/", dependencies=[Security(security.check_authentication_header)])
 def result():
     return {'result': 'Success'}
 
@@ -34,3 +30,7 @@ def read_item(item_id: int, q: Union[str, None] = None):
 @app.get("/test/function/")
 def test_function(test_data: str = Form(...)):    
     return {"result": True, "message": test_data}
+
+@app.post("/detection/detect/", dependencies=[Security(security.check_authentication_header)])
+def detect_tacos(image: UploadFile(...)):
+    return {"result": True, "message": "Image processed successfully"}
