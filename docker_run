@@ -1,0 +1,1 @@
+docker run -d --name taco_mask_api -p 7575:7575 fastapi_py39:latest
