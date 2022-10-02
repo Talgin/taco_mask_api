@@ -7,6 +7,7 @@
     - [ ] /authenticate/ - X-Api-Key authentication
     - [ ] /test/ - Test of api key authentication to send requests
     - [ ] /detection/ - Process received image
+    - [ ] utils.draw_mask - Draw a mask on a given coordinates
 - [ ] Configure: 
     - [ ] Use HTTPS / SSL
     - [ ] Nginx
