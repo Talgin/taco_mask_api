@@ -1,5 +1,7 @@
 ### ToDo
-- [ ] Create: Dockerfile
+- [ ] Create: 
+    - [x] Dockerfile
+    - [ ] Triton server model loading files
 - [ ] Function: 
     - [ ] /add_user/ - Add user into database and provide X-Api-Key (only admin)
     - [ ] /authenticate/ - X-Api-Key authentication
@@ -9,6 +11,7 @@
     - [ ] Use HTTPS / SSL
     - [ ] Nginx
     - [ ] Logging
+    - [ ] NVIDIA Triton Server
 - [ ] Test: 
     - [ ] 1000 requests at a time (using Locust)
 
