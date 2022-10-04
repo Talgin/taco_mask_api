@@ -1,7 +1,7 @@
 ### ToDo
 - [ ] Create: 
     - [x] Dockerfile
-    - [ ] Triton server model loading files
+    - [ ] Configurations to load models into Triton server
 - [ ] Function: 
     - [ ] /add_user/ - Add user into database and provide X-Api-Key (only admin)
     - [ ] /authenticate/ - X-Api-Key authentication
